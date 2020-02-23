@@ -72,7 +72,7 @@ impl Response {
                     store_hint: buf.get_bool(),
                     address: Address::from_slice(buf.split_to(6).as_ref()),
                     address_type: FromPrimitive::from_u8(buf.get_u8()).unwrap(),
-                    key_type: FromPrimitive::from_u8(buf.get_u8()).unwrap(),
+                    key_type: FromPrimitive::from_u8(dbg!(buf.get_u8())).unwrap(),
                     master: buf.get_u8(),
                     encryption_size: buf.get_u8(),
                     encryption_diversifier: buf.get_u16_le(),
